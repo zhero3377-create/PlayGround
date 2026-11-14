@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101619" />
+  <title>City of Shadows — Afterlight</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="City of Shadows game">
+    <canvas id="game" aria-label="Playable City of Shadows game world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">C</span><div><strong>CITY <i>OF</i> SHADOWS</strong><small>AFTERLIGHT DISTRICT · OFFLINE STORY</small></div></div>
+      <div class="top-stats"><div class="stat"><span>FUNDS</span><b id="money">$ 1,250</b></div><div class="stat heat"><span>HEAT</span><b id="heat">☆☆☆☆☆</b></div><button id="pause-btn" class="icon-btn" aria-label="Pause">Ⅱ</button></div>
+    </header>
+    <section class="mission-card"><div class="mission-kicker"><span class="live-dot"></span><span id="mission-label">STORY · 01 / 04</span></div><h1 id="mission-title">A CITY THAT FORGETS</h1><p id="mission-copy">Find Mara at the Lantern Café. The old port holds more than cargo.</p><div class="mission-bottom"><span id="objective">OBJECTIVE · Reach the gold marker</span><span id="reward">+$ 350</span></div></section>
+    <div class="location"><span class="pin">⌖</span><div><strong id="district">OLD HARBOR</strong><small id="clock">18:42 · CLEAR</small></div></div>
+    <div class="map-wrap"><canvas id="minimap" width="150" height="150"></canvas><span class="map-label">DISTRICT MAP <i>◈</i></span></div>
+    <div class="bottom-left"><div class="health-row"><span>VITALS</span><b id="health-text">100</b></div><div class="health-bar"><i id="health-bar"></i></div><div class="hint" id="hint">WASD / ARROWS MOVE <span>·</span> E INTERACT <span>·</span> SHIFT SPRINT</div></div>
+    <div class="vehicle-hud hidden" id="vehicle-hud"><span>VEHICLE</span><strong id="vehicle-name">NIGHTJAR S</strong><div><b id="speed">000</b><small> KM/H</small></div><span class="engine-line"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+    <div id="toast" class="toast"></div>
+    <div id="interact" class="interact hidden"><kbd>E</kbd><span>ENTER VEHICLE</span></div>
+    <div class="touch-controls" id="touch-controls"><div class="stick" id="stick"><span></span></div><div class="touch-actions"><button id="touch-enter">ENTER</button><button id="touch-run">RUN</button></div></div>
+    <div class="overlay hidden" id="pause-overlay"><div class="pause-panel"><div class="eyebrow">AFTERLIGHT DISTRICT</div><h2>TAKE A BREATH.</h2><p>Your progress is saved locally. This city doesn't need a connection.</p><div class="settings-row"><label for="quality">VISUAL QUALITY</label><select id="quality"><option value="0.7">LOW · PERFORMANCE</option><option value="0.85">MEDIUM · BALANCED</option><option value="1" selected>HIGH · DETAIL</option></select></div><div class="settings-row"><label for="sound-toggle">AMBIENCE</label><button id="sound-toggle">ON</button></div><button class="resume" id="resume-btn">RETURN TO THE CITY <span>→</span></button><button class="reset" id="reset-btn">RESET LOCAL SAVE</button><small class="offline-note">OFFLINE SINGLE PLAYER · NO ACCOUNT · NO MICROTRANSACTIONS</small></div></div>
+    <div class="mission-complete hidden" id="complete"><div class="complete-card"><div class="complete-icon">✓</div><span>STORY CHAPTER COMPLETE</span><h2 id="complete-title">A NEW LEAD</h2><p id="complete-copy">The city is starting to open up.</p><div class="complete-reward" id="complete-reward">+$ 350</div><button id="continue-btn">CONTINUE <b>→</b></button></div></div>
+    <footer class="footer"><span>✦ &nbsp; A NEW LIFE, IN A CITY OF OLD SECRETS</span><span>BUILD 0.1.0 &nbsp;·&nbsp; PROTOTYPE</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
